@@ -1,5 +1,145 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Documentation Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
 <body>
-<h1>Hi</h1>
+    <nav id="navbar">
+        <header id="nav-title">HTML Documentation</header>
+        <ul>
+            <li>
+                <a href="#Introduction" class="nav-link">Introduction</a>
+            </li>
+            <li>
+                <a href="#Var" class="nav-link">var</a>
+            </li>
+            <li>
+                <a href="#Let" class="nav-link">Let</a>
+            </li>
+            <li>
+                <a href="#Const" class="nav-link">Const</a>
+            </li>
+            <li>
+                <a href="#Number" class="nav-link">Number</a>
+            </li>
+            <li>
+                <a href="#String" class="nav-link">String</a>
+            </li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>JavaScript provides different data types to hold different types of values. There are two types of data types in JavaScript.</p>
+            <ol>
+                <li>Primitive data type</li>
+                <li>Non-primitive (reference) data type</li>
+            </ol>
+            <p>JavaScript is a dynamic type language, means you don't need to specify type of the variable because it is dynamically used by JavaScript engine. You need to use var here to specify the data type. It can hold any type of values such as numbers, strings etc.</p>
+
+        </section>
+        <section class="main-section" id="Var">
+            <header>Var</header>
+            <p>The var statement declares a variable, optionally initializing it to a value.</p>
+            <p>var declarations, wherever they occur, are processed before any code is executed. This is called hoisting, and is discussed further below.The scope of a variable declared with var is its current execution context, which is either the enclosing function or, for variables declared outside any function, global. </p>
+            <code>
+                    var x = 1;
+
+                    if (x === 1) {
+                      var x = 2;
+                    
+                      console.log(x);
+                      // expected output: 2
+                    }
+                    
+                    console.log(x);
+                    // expected output: 2
+            </code>
+            <p>If you re-declare a JavaScript variable, it will not lose its value.Assigning a value to an undeclared variable implicitly creates it as a global variable (it becomes a property of the global object) when the assignment is executed.</p>
+        </section>
+        <section class="main-section" id="Let">
+            <header>Let</header>
+            <p>The let statement declares a block scope local variable, optionally initializing it to a value.</p>
+            <ul>
+                <li>
+                let allows you to declare variables that are limited to a scope of a block statement, or expression on which it is used, unlike the var keyword, which defines a variable globally, or locally to a entire function regardless of block scope.</li>
+                <li>
+                The other difference between var and let is that the latter is initialized to value only when parser evaluates it (see below) </li>
+                <li> .Just like const the let does not create properties of the window object when  declared globally (in the top-most scope).
+                </li>
+                </ul>
+            <code>
+                    function varTest() {
+                        var x = 1;
+                        {
+                          var x = 2;  // same variable!
+                          console.log(x);  // 2
+                        }
+                        console.log(x);  // 2
+                      }
+                      
+                      function letTest() {
+                        let x = 1;
+                        {
+                          let x = 2;  // different variable
+                          console.log(x);  // 2
+                        }
+                        console.log(x);  // 1
+                      }
+            </code>
+            <p>Variables declared by let have their scope in the block for which they are defined, as well as in any contained sub-blocks. In this way, let works very much like var. The main difference is that the scope of a var variable is the entire enclosing function</p>
+        </section>
+        <section class="main-section" id="Const">
+            <header>Const</header>
+            <p>Constants are block-scoped, much like variables defined using the let statement. The value of a constant can't be changed through reassignment, and it can't be redeclared.</p>
+            <p>This declaration creates a constant whose scope can be either global or local to the block in which it is declared. Global constants do not become properties of the window object, unlike var variables. An initializer for a constant is required; that is, you must specify its value in the same statement in which it's declared (which makes sense, given that it can't be changed later).</p>
+            <code>
+                    const number = 42;
+                    try {
+                      number = 99;
+                    } catch(err) {
+                      console.log(err);
+                      // expected output: TypeError: invalid assignment to const `number'
+                      // Note - error messages will vary depending on browser
+                    }
+                    
+                    console.log(number);
+                    // expected output: 42
+            </code>
+            <p>The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable, just that the variable identifier cannot be reassigned. For instance, in the case where the content is an object, this means the object's contents (e.g., its properties) can be altered.</p>
+        </section>
+        <section class="main-section" id="Number">
+            <header>Number</header>
+            <p>The Number type is a double-precision 64-bit binary format IEEE 754 value (numbers between -(253 -1) and 253 -1). There is no specific type for integers. In addition to being able to represent floating-point numbers, the number type has three symbolic values: +Infinity, -Infinity, and NaN (not-a-number).</p>
+            <code>
+                    var x = 1;
+                    if (x === 1) {
+                      var x = 2;
+                    
+                      console.log(x);
+                      // expected output: 2
+                    }
+                    
+                    console.log(x);
+                    // expected output: 2</code>
+                    <p>The above code is a example of numbers in JavaScript</p>
+        </section>
+        <section class="main-section" id="String">
+            <header>String</header>
+            <p>In any computer programming language, a string is a sequence of characters used to represent text.The String object lets you work with a series of characters; it wraps Javascript's string primitive data type with a number of helper methods.As JavaScript automatically converts between string primitives and String objects, you can call any of the helper methods of the String object on a string primitive.</p>
+            <code>
+                    const firstString = '2 + 2'; // Creates a string literal value
+                    const secondString = new String('2 + 2'); // Creates a String object
+                    eval(firstString); // Returns the number 4
+                    eval(secondString); // Returns the string "2 + 2"</code>
+        </section>
+    </main>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
+

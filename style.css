@@ -1,7 +1,13 @@
-* {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+.btn-primary {
+    background-color: #7845FF;
 }
+
+.jumbotron {
+    background-image: linear-gradient(to bottom right, #9574EA, #FE938C);
+    color: white;
+    font-weight: 600;
+}
+=======
 
 header {
     font-size: 1.8em;

@@ -111,3 +111,15 @@ section p {
             padding: 10px;
         }
 }
+#navbar{
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#navbar ul li a{
+    color: #fff;
+}
+
+#navbar ul li:hover{
+    background-color: #333;
+}
